@@ -1,10 +1,10 @@
-// 专门测试Firefox的脚本
+// Scripts specifically designed for testing Firefox
 const { execSync } = require('child_process');
 
 console.log('🧪 Testing Firefox specifically...');
 
 try {
-  // 运行Firefox测试并显示详细日志
+  // Run Firefox tests and display detailed logs.
   const result = execSync('npx playwright test --project=firefox --headed --timeout=60000', { 
     encoding: 'utf8',
     stdio: 'inherit'
