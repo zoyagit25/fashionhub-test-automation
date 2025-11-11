@@ -24,7 +24,7 @@ export class BasePage {
         throw new Error(`Navigation failed with status: ${response?.status()}`);
       }
       
-      // Firefox需要更长的等待时间
+      // Firefox requires a longer waiting time.
       if (browserName === 'firefox') {
         await this.page.waitForLoadState('networkidle', { timeout: 30000 });
         await this.page.waitForTimeout(1000);
