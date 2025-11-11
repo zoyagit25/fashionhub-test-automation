@@ -14,7 +14,7 @@ test('TC1: Verify no console errors on home page', async ({ page, browserName })
 
   await aboutPage.navigateTo('');
   
-  // Firefox需要更长的等待时间
+  // Firefox requires a longer waiting time.
   if (browserName === 'firefox') {
     await page.waitForTimeout(3000);
   } else {
@@ -23,7 +23,7 @@ test('TC1: Verify no console errors on home page', async ({ page, browserName })
   
   console.log(`${browserName} - Home page console errors:`, errors);
   
-  // 主页应该没有控制台错误
+  // The homepage should not have any console errors.
   expect(errors).toHaveLength(0);
 });
 
@@ -40,7 +40,7 @@ test('TC1: Verify about page has intentional error', async ({ page, browserName 
 
   await aboutPage.navigateTo('about.html');
   
-  // Firefox需要更长的等待时间
+  // Firefox requires a longer waiting time.
   if (browserName === 'firefox') {
     await page.waitForTimeout(3000);
   } else {
