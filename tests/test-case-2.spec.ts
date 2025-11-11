@@ -34,7 +34,7 @@ test('TC2: Verify all links return valid status codes', async ({ page, browserNa
       } catch (error) {
         const errorMessage = error instanceof Error ? error.message : String(error);
         console.log(`${browserName} - ✗ ${link.href} - Error: ${errorMessage}`);
-        // 对于Firefox，不因为单个链接失败而终止测试
+       // For Firefox, do not terminate the test because a single link fails.
         if (browserName !== 'firefox') {
           throw error;
         }
